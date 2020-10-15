@@ -1,11 +1,17 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  margin-left: 20px;
+  color: white;
+
+  h2 {
+    padding: 20px 0;
+  }
+`;
 
 export const Posters = styled.div`
   overflow-y: hidden;
   overflow-x: scroll;
-  padding: 20px;
 
   &::-webkit-scrollbar {
     width: 0;

@@ -16,6 +16,7 @@ const settings = {
   slidesToShow: 8,
   slidesToScroll: 8,
   adaptiveHeight: true,
+  arrows: false,
 };
 
 const Row = ({ title, fetchUrl }) => {
