@@ -5,6 +5,8 @@ import axios from "../../api/axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import YouTube from "react-youtube";
+import movieTrailer from "movie-trailer";
 
 import { Container, Posters, Poster } from "./styles";
 
@@ -21,6 +23,7 @@ const settings = {
 
 const Row = ({ title, fetchUrl }) => {
   const [movies, setMovies] = useState([]);
+  const [trailerUrl, setTrailerUrl] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -31,6 +34,29 @@ const Row = ({ title, fetchUrl }) => {
     fetchData();
   }, [fetchUrl]);
 
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
+  const handleClickPoster = (movie) => {
+    if (trailerUrl) {
+      setTrailerUrl("");
+    } else {
+      movieTrailer(movie?.original_name || "")
+        .then((url) => {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setTrailerUrl(urlParams.get("v"));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
+
   return (
     <Container>
       <h2>{title}</h2>
@@ -40,12 +66,14 @@ const Row = ({ title, fetchUrl }) => {
           {movies.map((movie) => (
             <Poster
               key={movie.id}
+              onClick={() => handleClickPoster(movie)}
               src={`${base_url_image}${movie.poster_path}`}
               alt={movie.name}
             />
           ))}
         </Slider>
       </Posters>
+      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </Container>
   );
 };
