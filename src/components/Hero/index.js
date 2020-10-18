@@ -16,7 +16,7 @@ import {
 import axios from "../../api/axios";
 import requests from "../../api/requests";
 
-const Hero = ({ title }) => {
+const Hero = () => {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {

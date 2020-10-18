@@ -1,6 +1,7 @@
 import React from "react";
 
 import requests from "./api/requests";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Row from "./components/Row";
 
@@ -9,7 +10,8 @@ import GlobalStyles from "./styles/GlobalStyles";
 function App() {
   return (
     <div className="App">
-      <Hero title="Hero Image" />
+      <Navbar />
+      <Hero />
       <Row
         title="Netflix Originais"
         fetchUrl={requests.fetchNetflixOriginals}
