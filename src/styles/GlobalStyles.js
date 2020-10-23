@@ -10,7 +10,8 @@ export default createGlobalStyle`
     min-height: 100%;
   }
   body {
-    background-color: #111;
+    background-color: #111; 
+    font-family: 'Open Sans', sans-serif;
   }
 
   ul {
