@@ -6,7 +6,6 @@
 # Features
 * [⚛ React JS](https://reactjs.org/)
 * [⚛ React Hooks](https://reactjs.org/docs/hooks-intro.html)
-* [TypeScript](https://www.typescriptlang.org/)
 * [💅CSS - Styled Components](https://styled-components.com/)
 * [React Youtube](https://github.com/tjallingt/react-youtube)
 * [React Trailer](https://github.com/Naimikan/react-trailer)
