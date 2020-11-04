@@ -14,7 +14,7 @@
 
 # Getting Started
 1. Clone this repo using git clone [https://github.com/JoaoGil06/Netflix-React-Project.git](https://github.com/JoaoGil06/Netflix-React-Project.git)
-1. Move yourself to the appropriate directory: cd Github-React-Project
+1. Move yourself to the appropriate directory: cd netflix-react-project
 1. Run yarn install or npm install to install dependencies
 
 # Contributing
